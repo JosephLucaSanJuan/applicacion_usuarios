@@ -1,0 +1,36 @@
+<!--ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card>
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <ion-item>
+          <ion-input label="Usuario" labelPlacement="floating" clearInput formControlName="username"></ion-input>
+          <span *ngIf="form.controls['username'].getError('required') && form.controls['username'].touched" class="form-text text-danger">
+            Este campo es requerido
+          </span>
+        </ion-item>
+        <ion-item>
+          <!--ion-label></ion-label-->
+          <ion-input label="Contraseña" labelPlacement="floating" clearInput formControlName="password"></ion-input>
+          <span *ngIf="form.controls['password'].getError('required') && form.controls['password'].touched" class="form-text text-danger">
+            Este campo es requerido
+          </span>
+        </ion-item>
+        <br>
+        <ion-button (click)="login()" expand="full">
+          Iniciar Sesión
+        </ion-button>
+        <br>
+          <ion-label>¿Ya tienes cuenta?</ion-label>
+        <ion-button (click)="goRegisterUser()" expand="full">
+          Quiero registrarme
+        </ion-button>
+      </form>
+    </ion-card>
+  </div>
+</ion-content>

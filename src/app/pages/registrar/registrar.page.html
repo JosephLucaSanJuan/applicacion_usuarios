@@ -1,0 +1,55 @@
+<!--ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>registrar</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <form [formGroup]="form" (ngSsubmit)="register()">
+      <ion-item>
+        <!--ion-label position="floating"></ion-label [(ngModel)]="user.name"
+        <ion-label position="floating"></ion-label [(ngModel)]="user.surname">
+        <ion-label position="floating"></ion-label [(ngModel)]="user.userName">
+        <ion-label position="floating"></ion-label [(ngModel)]="user.email">
+        <ion-label position="floating"></ion-label [(ngModel)]="user.password">
+        <ion-label position="floating"></ion-label> [(ngModel)]="user.password"-->
+        <ion-input placeholder="Introduce tu nombre" formControlName="name" clearInput></ion-input>
+        <span *ngIf="form.controls['name'].getError('required') && form.controls['name'].touched" class="form-text text-danger">
+          Este campo es requerido
+        </span>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Introduce tu apellido" formControlName="surname" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Introduce tu correo electrónico" formControlName="email" clearInput></ion-input>
+        <span *ngIf="form.controls['email'].getError('required') && form.controls['email'].touched" class="form-text text-danger">
+          Este campo es requerido
+        </span>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Escribe tu nombre de usuario" formControlName="userName" clearInput></ion-input>
+        <span *ngIf="form.controls['userName'].getError('required') && form.controls['userName'].touched" class="form-text text-danger">
+          Este campo es requerido
+        </span>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Introduce una contraseña" formControlName="password" clearInput></ion-input>
+        <span *ngIf="form.controls['password'].getError('required') && form.controls['password'].touched" class="form-text text-danger">
+          Este campo es requerido
+        </span>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Confirma tu contraseña" formControlName="passwordConfirm" clearInput></ion-input>
+        <span *ngIf="form.controls['passwordConfirm'].getError('required') && form.controls['passwordConfirm'].touched" class="form-text text-danger">
+          Este campo es requerido
+        </span>
+      </ion-item>
+      <br>
+      <ion-button (click)="register()">
+        Regístrate
+      </ion-button>
+    </form>
+  </ion-card>
+</ion-content>

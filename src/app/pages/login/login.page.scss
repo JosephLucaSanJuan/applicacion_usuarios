@@ -1,0 +1,30 @@
+ion-card {
+    //position: absolute;
+    background-color: aquamarine;
+    /*margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 10%;
+    margin-top: 10%;*/
+    margin: 30px;
+    position: center;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 100%;
+    //margin: 30px;
+}
+
+ion-item {
+    margin: 5px;
+    background-color: white;
+}
+
+ion-label {
+    position: center;
+    color: blueviolet;
+}
+
+ion-button {
+    margin: 10px;
+}
